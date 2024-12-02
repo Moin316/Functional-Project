@@ -1,11 +1,11 @@
 import React, { createContext, useState } from 'react'
 export const Productcontext=createContext();
 const Context = (props ) => {
-    const [val,setVal]=useState(null);
+    const [products,setProducts]=useState(null);
   return (
-    <div>
+    <Productcontext.Provider value={[products,setProducts]}>
     {props.children}
-    </div>
+    </Productcontext.Provider>
   )
 }
 
