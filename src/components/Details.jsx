@@ -8,7 +8,6 @@ const Details = () => {
   const product=async ()=>{
     try{
       const {data}=await axios.get(`/products/${id}`);
-      console.log(data);
       setDetails(
         data
       )
