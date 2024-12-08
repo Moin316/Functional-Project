@@ -16,7 +16,7 @@ const Details = () => {
   //     console.log(error);
   //   }
   // }
-  useEffect(()=>{
+  useEffect(()=>
     product();
   },[])
   return (details?
