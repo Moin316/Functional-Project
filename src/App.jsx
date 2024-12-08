@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react'
 import Home from './components/Home'
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import Details from './components/Details'
+import Create from './components/Create'
 
 const App = () => {
   const {search,pathname}=useLocation(); 
@@ -15,6 +16,7 @@ const App = () => {
       )}
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/create" element={<Create />}></Route>
         <Route path="/details/:id" element={<Details />}></Route>
       </Routes>
     </div>

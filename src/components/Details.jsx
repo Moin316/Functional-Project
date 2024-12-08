@@ -5,17 +5,17 @@ import Loading from './Loading';
 const Details = () => {
   const {id}=useParams();
   const [details,setDetails] = useState();
-  const product=async ()=>{
-    try{
-      const {data}=await axios.get(`/products/${id}`);
-      setDetails(
-        data
-      )
-    }
-    catch(error){
-      console.log(error);
-    }
-  }
+  // const product=async ()=>{
+  //   try{
+  //     const {data}=await axios.get(`/products/${id}`);
+  //     setDetails(
+  //       data
+  //     )
+  //   }
+  //   catch(error){
+  //     console.log(error);
+  //   }
+  // }
   useEffect(()=>{
     product();
   },[])
