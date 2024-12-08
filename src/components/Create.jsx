@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { Productcontext } from '../utils/Context';
 import { nanoid } from 'nanoid';
+import { useNavigate } from 'react-router-dom';
 const Create = () => { 
+    const navigate=useNavigate();
     const [products,setProducts]=useContext(Productcontext);
     const [title, setTitle]=useState("");
     const [image, setImage]=useState("");
@@ -19,12 +21,8 @@ const Create = () => {
             title,image,category,price,description,
         }
         setProducts([...products,product]);
-        setTitle(""); 
-        setCategory("");
-
-
-
-
+        navigate("/")
+        localStorage.setItem("product", JSON.stringify([...products,product]));
     }
   return (
     <form onSubmit={AddProductHandler}className="flex flex-col items-center p-[5%] w-screen h-screen">
@@ -75,7 +73,7 @@ const Create = () => {
         }}
       ></textarea>
       <div className='w-1/2'>
-      <button
+      <button 
         className="self-start py-2 px-6 border rounded border-blue-200 text-blue-300 hover:text-black hover:bg-blue-300 hover:scale-105 transition-all">
             Add Product
         </button>
